@@ -1,9 +1,11 @@
 package com.hc.gulimall.product.service.impl;
 
+import com.hc.gulimall.product.vo.SkuItemSaleAttrVo;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Map;
+
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
@@ -30,7 +32,13 @@ public class SkuSaleAttrValueServiceImpl extends ServiceImpl<SkuSaleAttrValueDao
 
     @Override
     public List<String> getSkuSaleAttrValuesAsStringList(Long skuId) {
-       return  this.baseMapper.getSkuSaleAttrValuesAsStringList(skuId);
+        return this.baseMapper.getSkuSaleAttrValuesAsStringList(skuId);
+    }
+
+    @Override
+    public List<SkuItemSaleAttrVo> getSaleAttrBySpuId(Long spuId) {
+
+        return this.baseMapper.getSaleAttrBySpuId(spuId);
     }
 
 }
