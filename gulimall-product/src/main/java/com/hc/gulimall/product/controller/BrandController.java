@@ -1,14 +1,15 @@
 package com.hc.gulimall.product.controller;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
+import com.hc.gulimall.product.entity.CategoryBrandRelationEntity;
+import com.hc.gulimall.product.service.CategoryBrandRelationService;
+import com.hc.gulimall.product.vo.BrandVo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.hc.gulimall.product.entity.BrandEntity;
 import com.hc.gulimall.product.service.BrandService;
@@ -28,6 +29,8 @@ import com.hc.common.utils.R;
 @RequestMapping("product/brand")
 public class BrandController {
     @Autowired
+    private CategoryBrandRelationService categoryBrandRelationService;
+    @Autowired
     private BrandService brandService;
 
     /**
@@ -40,6 +43,8 @@ public class BrandController {
 
         return R.ok().put("page", page);
     }
+
+    /**
 
 
     /**
