@@ -5,7 +5,7 @@
 
 	<!-- 可根据自己的需求，是否要使用 -->
     <resultMap type="com.hc.gulimall.member.entity.MemberLevelEntity" id="memberLevelMap">
-        <result property="id" column="id"/>
+        <result property="id"  column="id"/>
         <result property="name" column="name"/>
         <result property="growthPoint" column="growth_point"/>
         <result property="defaultStatus" column="default_status"/>
@@ -17,5 +17,7 @@
         <result property="note" column="note"/>
     </resultMap>
 
-
+    <select id="getDefaultLevel" resultMap="memberLevelMap">
+        select  * from ums_member_level where default_status = 1
+    </select>
 </mapper>
