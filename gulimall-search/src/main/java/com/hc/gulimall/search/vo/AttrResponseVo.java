@@ -1,6 +1,5 @@
 package com.hc.gulimall.search.vo;
 
-
 import lombok.Data;
 
 @Data

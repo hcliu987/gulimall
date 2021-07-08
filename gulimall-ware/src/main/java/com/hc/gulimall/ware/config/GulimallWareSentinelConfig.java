@@ -14,15 +14,15 @@ import java.io.IOException;
 
 @Configuration
 public class GulimallWareSentinelConfig {
-    public GulimallWareSentinelConfig(){
-        WebCallbackManager.setUrlBlockHandler(new UrlBlockHandler() {
-            @Override
-            public void blocked(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, BlockException e) throws IOException {
-             R error=   R.error(BizCodeEnum.TO_MANY_REQUEST.getCode(),BizCodeEnum.TO_MANY_REQUEST.getMessage());
-                httpServletResponse.setCharacterEncoding("UTF-8");
-                httpServletResponse.setContentType("application/json");
-                httpServletResponse.getWriter().write(JSON.toJSONString(error));
-            }
-        });
-    }
+//    public GulimallWareSentinelConfig(){
+//        WebCallbackManager.setUrlBlockHandler(new UrlBlockHandler() {
+//            @Override
+//            public void blocked(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, BlockException e) throws IOException {
+//             R error=   R.error(BizCodeEnum.TO_MANY_REQUEST.getCode(),BizCodeEnum.TO_MANY_REQUEST.getMessage());
+//                httpServletResponse.setCharacterEncoding("UTF-8");
+//                httpServletResponse.setContentType("application/json");
+//                httpServletResponse.getWriter().write(JSON.toJSONString(error));
+//            }
+//        });
+//    }
 }

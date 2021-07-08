@@ -1,6 +1,5 @@
 package com.hc.gulimall.search.service;
 
-
 import com.hc.common.es.SkuEsModel;
 
 import java.io.IOException;

@@ -11,17 +11,17 @@ import javax.sql.DataSource;
 
 @Configuration
 public class MySeataConfig {
-    @Autowired
-    private DataSourceProperties dataSourceProperties;
-
-    @Bean
-    public DataSource dataSource(DataSourceProperties dataSourceProperties){
-        HikariDataSource dataSource=dataSourceProperties.initializeDataSourceBuilder().type(HikariDataSource.class).build();
-        if(!StringUtils.hasText(dataSourceProperties.getName())){
-            dataSource.setPoolName(dataSourceProperties.getName());
-        }
-        return  null;
-      //  return new DataSourceProxy(dataSource);
-    }
+//    @Autowired
+//    private DataSourceProperties dataSourceProperties;
+//
+//    @Bean
+//    public DataSource dataSource(DataSourceProperties dataSourceProperties){
+//        HikariDataSource dataSource=dataSourceProperties.initializeDataSourceBuilder().type(HikariDataSource.class).build();
+//        if(!StringUtils.hasText(dataSourceProperties.getName())){
+//            dataSource.setPoolName(dataSourceProperties.getName());
+//        }
+//        return  null;
+//      //  return new DataSourceProxy(dataSource);
+//    }
 
 }

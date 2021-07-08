@@ -6,7 +6,6 @@ import java.util.List;
 
 @Data
 public class SearchParam {
-
     /**
      * 页面传递过来的全文匹配关键字
      */
