@@ -15,7 +15,7 @@ public class ItemController {
     @Resource
     private SkuInfoService skuInfoService;
 
-    @GetMapping("/{skuId}.thml")
+    @GetMapping("/{skuId}.html")
     public String skuItem(@PathVariable("skuId") long skuId, Model model) throws ExecutionException, InterruptedException {
         System.out.println("准备查询"+ skuId+ "详情");
         SkuItemVo vos = skuInfoService.item(skuId);
