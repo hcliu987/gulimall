@@ -3,7 +3,6 @@ package com.hc.gulimall.member.controller;
 import java.util.Arrays;
 import java.util.Map;
 
-import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -13,8 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.hc.gulimall.member.entity.MemberStatisticsInfoEntity;
 import com.hc.gulimall.member.service.MemberStatisticsInfoService;
-import com.hc.common.utils.PageUtils;
-import com.hc.common.utils.R;
+import com.hc.gulimall.common.utils.PageUtils;
+import com.hc.gulimall.common.utils.R;
 
 
 
@@ -35,7 +34,6 @@ public class MemberStatisticsInfoController {
      * 列表
      */
     @RequestMapping("/list")
-    @RequiresPermissions("member:memberstatisticsinfo:list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = memberStatisticsInfoService.queryPage(params);
 
@@ -47,7 +45,6 @@ public class MemberStatisticsInfoController {
      * 信息
      */
     @RequestMapping("/info/{id}")
-    @RequiresPermissions("member:memberstatisticsinfo:info")
     public R info(@PathVariable("id") Long id){
 		MemberStatisticsInfoEntity memberStatisticsInfo = memberStatisticsInfoService.getById(id);
 
@@ -58,7 +55,6 @@ public class MemberStatisticsInfoController {
      * 保存
      */
     @RequestMapping("/save")
-    @RequiresPermissions("member:memberstatisticsinfo:save")
     public R save(@RequestBody MemberStatisticsInfoEntity memberStatisticsInfo){
 		memberStatisticsInfoService.save(memberStatisticsInfo);
 
@@ -80,7 +76,6 @@ public class MemberStatisticsInfoController {
      * 删除
      */
     @RequestMapping("/delete")
-    @RequiresPermissions("member:memberstatisticsinfo:delete")
     public R delete(@RequestBody Long[] ids){
 		memberStatisticsInfoService.removeByIds(Arrays.asList(ids));
 

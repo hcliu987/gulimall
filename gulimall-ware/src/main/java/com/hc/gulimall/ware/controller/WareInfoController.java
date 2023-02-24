@@ -3,7 +3,6 @@ package com.hc.gulimall.ware.controller;
 import java.util.Arrays;
 import java.util.Map;
 
-import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -13,8 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.hc.gulimall.ware.entity.WareInfoEntity;
 import com.hc.gulimall.ware.service.WareInfoService;
-import com.hc.common.utils.PageUtils;
-import com.hc.common.utils.R;
+import com.hc.gulimall.common.utils.PageUtils;
+import com.hc.gulimall.common.utils.R;
 
 
 
@@ -35,7 +34,6 @@ public class WareInfoController {
      * 列表
      */
     @RequestMapping("/list")
-    @RequiresPermissions("ware:wareinfo:list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = wareInfoService.queryPage(params);
 
@@ -47,7 +45,6 @@ public class WareInfoController {
      * 信息
      */
     @RequestMapping("/info/{id}")
-    @RequiresPermissions("ware:wareinfo:info")
     public R info(@PathVariable("id") Long id){
 		WareInfoEntity wareInfo = wareInfoService.getById(id);
 
@@ -58,7 +55,6 @@ public class WareInfoController {
      * 保存
      */
     @RequestMapping("/save")
-    @RequiresPermissions("ware:wareinfo:save")
     public R save(@RequestBody WareInfoEntity wareInfo){
 		wareInfoService.save(wareInfo);
 
@@ -69,7 +65,6 @@ public class WareInfoController {
      * 修改
      */
     @RequestMapping("/update")
-    @RequiresPermissions("ware:wareinfo:update")
     public R update(@RequestBody WareInfoEntity wareInfo){
 		wareInfoService.updateById(wareInfo);
 
@@ -80,7 +75,6 @@ public class WareInfoController {
      * 删除
      */
     @RequestMapping("/delete")
-    @RequiresPermissions("ware:wareinfo:delete")
     public R delete(@RequestBody Long[] ids){
 		wareInfoService.removeByIds(Arrays.asList(ids));
 

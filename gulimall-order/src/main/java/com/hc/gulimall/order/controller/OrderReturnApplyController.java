@@ -3,7 +3,6 @@ package com.hc.gulimall.order.controller;
 import java.util.Arrays;
 import java.util.Map;
 
-import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -13,8 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.hc.gulimall.order.entity.OrderReturnApplyEntity;
 import com.hc.gulimall.order.service.OrderReturnApplyService;
-import com.hc.common.utils.PageUtils;
-import com.hc.common.utils.R;
+import com.hc.gulimall.common.utils.PageUtils;
+import com.hc.gulimall.common.utils.R;
 
 
 
@@ -35,7 +34,6 @@ public class OrderReturnApplyController {
      * 列表
      */
     @RequestMapping("/list")
-    @RequiresPermissions("order:orderreturnapply:list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = orderReturnApplyService.queryPage(params);
 
@@ -47,7 +45,6 @@ public class OrderReturnApplyController {
      * 信息
      */
     @RequestMapping("/info/{id}")
-    @RequiresPermissions("order:orderreturnapply:info")
     public R info(@PathVariable("id") Long id){
 		OrderReturnApplyEntity orderReturnApply = orderReturnApplyService.getById(id);
 
@@ -58,7 +55,6 @@ public class OrderReturnApplyController {
      * 保存
      */
     @RequestMapping("/save")
-    @RequiresPermissions("order:orderreturnapply:save")
     public R save(@RequestBody OrderReturnApplyEntity orderReturnApply){
 		orderReturnApplyService.save(orderReturnApply);
 
@@ -69,7 +65,6 @@ public class OrderReturnApplyController {
      * 修改
      */
     @RequestMapping("/update")
-    @RequiresPermissions("order:orderreturnapply:update")
     public R update(@RequestBody OrderReturnApplyEntity orderReturnApply){
 		orderReturnApplyService.updateById(orderReturnApply);
 
@@ -80,7 +75,6 @@ public class OrderReturnApplyController {
      * 删除
      */
     @RequestMapping("/delete")
-    @RequiresPermissions("order:orderreturnapply:delete")
     public R delete(@RequestBody Long[] ids){
 		orderReturnApplyService.removeByIds(Arrays.asList(ids));
 
