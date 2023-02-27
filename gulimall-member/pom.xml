@@ -41,10 +41,10 @@
             <version>3.13.3</version>
         </dependency>
         <!--整合springsession，实现session共享-->
-        <dependency>
-            <groupId>org.springframework.session</groupId>
-            <artifactId>spring-session-data-redis</artifactId>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.session</groupId>-->
+<!--            <artifactId>spring-session-data-redis</artifactId>-->
+<!--        </dependency>-->
         <!--审计模块，监控应用的健康情况、调用信息-->
         <dependency>
             <groupId>org.springframework.boot</groupId>

@@ -1,18 +1,13 @@
 server:
   port: 8000
-  servlet:
-    session:
-      timeout: 30m
-
 spring:
+  redis:
+    host: 81.69.244.174
   application:
     name: gulimall-member
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT+8
-  redis:
-    host: 81.69.244.174
-    port: 6379
   datasource:
     url: jdbc:mysql://81.69.244.174:3306/gulimall_ums?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
     password: root

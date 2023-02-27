@@ -65,7 +65,6 @@ public class MemberStatisticsInfoController {
      * 修改
      */
     @RequestMapping("/update")
-    @RequiresPermissions("member:memberstatisticsinfo:update")
     public R update(@RequestBody MemberStatisticsInfoEntity memberStatisticsInfo){
 		memberStatisticsInfoService.updateById(memberStatisticsInfo);
 
